@@ -1,0 +1,20 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <form method="POST" action = ''>
+            {% csrf_token %}
+            <input type="text" name='city' />
+            <input type = 'submit' value='Submit'/>
+        </form>
+        {% if cast %}
+        <div>
+            <img src="http://openweathermap.org/img/w/{{ cast.icon }}.png">
+            <h1>City {{cast.city}}</h1>
+            <h3>Temprature {{cast.temperature}}</h3>
+            <h4>Description {{cast.description}}</h4>
+        </div>
+        {% endif %}
+    </body>
+</html>
